@@ -1,2 +1,2 @@
 1. docker build -t ubuntu_lime:latest .
-2. docker run ubuntu_lime -v modules:/opt/limemodules/
+2. docker run -v modules:/opt/limemodules/ ubuntu_lime

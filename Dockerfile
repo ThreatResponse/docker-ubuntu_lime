@@ -26,6 +26,6 @@ RUN apt-get install linux-headers-*generic* -qq -y
 RUN mkdir /opt/limemodules
 # From here you would pull down your kernel source and build it relative to the linux kernel source tree prepared in /usr/src/kernels/linux
 
-VOLUME ["/usr/src/kernels/LiME/src"]
+VOLUME ["/opt/limemodules/"]
 
 CMD for KERNS in /lib/modules/*; do make -C $KERNS/build M=/usr/src/kernels/LiME/src && current="`echo $KERNS | cut -d '/' -f4`" && mv lime.ko /opt/limemodules/$current.ko && echo $current; done
